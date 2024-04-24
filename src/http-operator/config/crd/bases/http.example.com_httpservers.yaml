@@ -43,6 +43,9 @@ spec:
                   format: int32
                   type: integer
                 type: array
+              replicas:
+                format: int32
+                type: integer
             required:
             - hosts
             - ports
