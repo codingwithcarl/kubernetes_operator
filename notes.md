@@ -8,3 +8,5 @@ make: *** [Makefile:100: manifests] Error 2
 
 `operator-sdk create api --group=http --version=v1alpha1 --kind=HTTPServer`
 FATA[0010] failed to create API: unable to run post-scaffold tasks of "base.go.kubebuilder.io/v4": exit status 2 
+
+https://github.com/operator-framework/operator-sdk/issues/6681
