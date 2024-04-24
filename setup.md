@@ -30,31 +30,32 @@ Updated the spec of api/v1alpha1/httpserver_types.go with the necessary fields f
 
 Updated the controllers/httpserver_controller.go file to define the reconcile logic for the HTTP servers. This logic will manage the lifecycle of the HTTP servers based on the CRD specifications.
 
-Build and Deploy the Operator:
+### Build and Deploy
 
-Build the operator docker image:
+#### HTTP Server
 
-`docker build -t <your-docker-repo>/<operator-name>:<tag> .`
+`cd src/basic_servers`
 
-Push it to a registry:
+`docker build -t <your-docker-repo>/<image-name>:<tag> .`
 
-`docker push <your-docker-repo>/<operator-name>:<tag>`
+Find and replace "your-http-server-image" with your image.
 
-Deploy the Operator to Kubernetes:
+#### Operator
 
-```bash
-kubectl apply -f deploy/service_account.yaml
-kubectl apply -f deploy/role.yaml
-kubectl apply -f deploy/role_binding.yaml
-```
 
-Deploy the CRD:
 
-`kubectl apply -f deploy/crds/http_v1alpha1_httpserver_crd.yaml`
+Run the operator:
 
-Deploy the Operator Deployment:
+`make manifests`
 
-`kubectl apply -f deploy/operator.yaml`
+`make install run`
+
+In a new terminal tab/window, create a sample HTTP custom resource:
+
+`cd src/http-operator`
+
+`kubectl apply -f config/crd/bases/http.example.com_httpservers.yaml`
+
 
 Verify the Deployment:
 
