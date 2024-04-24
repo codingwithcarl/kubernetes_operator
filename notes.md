@@ -17,3 +17,14 @@ must be on go version 1.21
 Error: not all generators ran successfully
 run `controller-gen rbac:roleName=manager-role crd webhook paths=./... output:crd:artifacts:config=config/crd/bases -w` to see all available markers, or `controller-gen rbac:roleName=manager-role crd webhook paths=./... output:crd:artifacts:config=config/crd/bases -h` for usage
 make: *** [Makefile:100: manifests] Error 1
+
+import (
+	"context"
+
+	"k8s.io/apimachinery/pkg/runtime"
+	ctrl "sigs.k8s.io/controller-runtime"
+	"sigs.k8s.io/controller-runtime/pkg/client"
+	"sigs.k8s.io/controller-runtime/pkg/log"
+
+	httpv1alpha1 "github.com/example/http-server-operator/api/v1alpha1"
+)

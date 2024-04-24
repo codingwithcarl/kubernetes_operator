@@ -31,8 +31,9 @@ type HTTPServerSpec struct {
 	// Foo is an example field of HTTPServer. Edit httpserver_types.go to remove/update
 	//Foo string `json:"foo,omitempty"`
 
-	Hosts []string 'json:"hosts"'
-	Ports []int32 'json:"ports"'
+	Hosts    []string `json:"hosts"`
+	Ports    []int32  `json:"ports"`
+	Replicas int32    `json:"replicas,omitempty"`
 }
 
 // HTTPServerStatus defines the observed state of HTTPServer
@@ -40,10 +41,10 @@ type HTTPServerStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	 // ObservedGeneration is the most recent generation observed for this HTTPServer
-	 ObservedGeneration int64 `json:"observedGeneration,omitempty"`
-	 // Status indicates the status of the HTTPServer
-	 Status string `json:"status,omitempty"`
+	// ObservedGeneration is the most recent generation observed for this HTTPServer
+	ObservedGeneration int64 `json:"observedGeneration,omitempty"`
+	// Status indicates the status of the HTTPServer
+	Status string `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
