@@ -1,0 +1,12 @@
+apiVersion: http.example.com/v1alpha1
+kind: HTTPServer
+metadata:
+  labels:
+    app.kubernetes.io/name: httpserver
+    app.kubernetes.io/instance: httpserver-sample
+    app.kubernetes.io/part-of: http-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: http-operator
+  name: httpserver-sample
+spec:
+  # TODO(user): Add fields here

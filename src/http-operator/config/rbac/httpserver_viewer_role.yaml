@@ -1,0 +1,27 @@
+# permissions for end users to view httpservers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: httpserver-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: http-operator
+    app.kubernetes.io/part-of: http-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: httpserver-viewer-role
+rules:
+- apiGroups:
+  - http.example.com
+  resources:
+  - httpservers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - http.example.com
+  resources:
+  - httpservers/status
+  verbs:
+  - get
