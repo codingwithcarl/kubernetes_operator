@@ -18,6 +18,8 @@ Operator SDK CLI: `brew install operator-sdk`
 
 [kubectl & kind or minikube](https://kubernetes.io/docs/tasks/tools/)
 
+`kind create cluster`
+
 ### What was done
 
 Created project in http-operator:
@@ -38,11 +40,11 @@ Updated the controllers/httpserver_controller.go file to define the reconcile lo
 
 `docker build -t <your-docker-repo>/<image-name>:<tag> .`
 
+`kind load docker-image <image-name>:<tag>`
+
 Find and replace "your-http-server-image" with your image.
 
 #### Operator
-
-
 
 Run the operator:
 
