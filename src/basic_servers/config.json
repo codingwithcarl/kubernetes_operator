@@ -1,0 +1,7 @@
+{
+    "hosts": [
+        {"host": "localhost", "port": 5001},
+        {"host": "localhost", "port": 5002}
+    ],
+    "interval_seconds": 60
+}

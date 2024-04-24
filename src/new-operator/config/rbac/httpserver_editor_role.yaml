@@ -1,0 +1,31 @@
+# permissions for end users to edit httpservers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: httpserver-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: new-operator
+    app.kubernetes.io/part-of: new-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: httpserver-editor-role
+rules:
+- apiGroups:
+  - http.example.com
+  resources:
+  - httpservers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - http.example.com
+  resources:
+  - httpservers/status
+  verbs:
+  - get
